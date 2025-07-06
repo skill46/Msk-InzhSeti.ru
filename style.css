@@ -1,52 +1,91 @@
+/* Основной стиль для сайта */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #000;
+}
 
-/* Основные стили */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background: #0057b7;
-  padding: 10px;
+/* Видео фон */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
 }
-nav button {
-  background: #fff;
+
+.video-background video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+
+/* Главный блок с анимацией */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+  animation: fadeIn 2s ease-out;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  animation: fadeIn 2s ease-out;
+}
+
+.cta-button {
+  background-color: #ffcc00;
   border: none;
-  margin: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #000;
   cursor: pointer;
-  transition: background 0.3s;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
-nav button:hover {
-  background: #ffcc00;
+
+.cta-button:hover {
+  background-color: #ff9800;
 }
+
+/* Сервисы */
 #services {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding: 40px 20px;
+  justify-content: space-around;
+  padding: 50px 20px;
 }
+
 .service {
-  background: white;
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
-  max-width: 600px;
-  width: 100%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  width: 30%;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
+
 .service img {
   max-width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
-.service img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+.service:hover {
+  transform: translateY(-10px);
 }
+
+/* Прайс */
 .price-table {
   max-width: 800px;
   margin: 40px auto;
@@ -55,54 +94,29 @@ nav button:hover {
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .price-table table {
   width: 100%;
   border-collapse: collapse;
 }
+
 .price-table th, .price-table td {
   padding: 15px;
   border: 1px solid #ccc;
   text-align: left;
 }
+
 .price-table th {
   background: #0057b7;
   color: white;
 }
-.seo-block {
-  max-width: 1000px;
-  margin: 40px auto;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  font-size: 16px;
-  line-height: 1.6;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-footer {
-  background: #222;
-  color: white;
-  padding: 30px 20px;
-  text-align: center;
-}
-footer h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-footer p, footer a {
-  font-size: 18px;
-  color: #ddd;
+
+/* Анимация текста */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Адаптив */
-@media (min-width: 768px) {
-  #services {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .service {
-    flex: 1 1 300px;
-    margin: 15px;
-  }
+.animated-text {
+  animation: fadeIn 1.5s ease-out;
 }
