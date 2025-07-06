@@ -1,0 +1,53 @@
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f8f8;
+  color: #333;
+}
+header {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #0066cc, #3399ff);
+  color: white;
+}
+.logo {
+  width: 80px;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+h1, h2 {
+  margin: 0.5rem 0;
+}
+.gallery .photos {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+.gallery img {
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.price {
+  padding: 1rem 2rem;
+}
+.price table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.price th, .price td {
+  border: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+}
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
