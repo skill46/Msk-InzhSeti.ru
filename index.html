@@ -3,60 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Московские Инженерные Сети</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Профессиональные инженерные и строительные услуги в Москве и МО. Отопление, канализация, газоснабжение, электрика и бетонные работы под ключ." />
+  <meta name="keywords" content="инженерные сети, отопление, водоотведение, газоснабжение, электромонтаж, бетонные работы, строительство, Москва, Шатура" />
+  <title>Московские Инженерные Сети | Строительство под ключ</title>
+  <link rel="stylesheet" href="./style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    header {
+      background: url('./images/1390d626-d63d-425e-b350-afef1b0d49c4.png') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px 40px;
+      position: relative;
+    }
+    header::after {
+      content: 'Надёжность. Качество. Сроки.';
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background: #0057b7;
+      padding: 10px;
+    }
+    nav button {
+      background: #fff;
+      border: none;
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    nav button:hover {
+      background: #ffcc00;
+    }
+    #services {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+    .service {
+      background: white;
+      padding: 20px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .service img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .price-table {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .price-table table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .price-table th, .price-table td {
+      padding: 15px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    .price-table th {
+      background: #0057b7;
+      color: white;
+    }
+    .seo-block {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      font-size: 16px;
+      line-height: 1.6;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    footer {
+      background: #222;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    footer h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    footer p, footer a {
+      font-size: 18px;
+      color: #ddd;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <img src="images/logo.png" alt="Логотип" class="logo" />
     <h1>Строительная компания «Московские Инженерные Сети»</h1>
   </header>
 
   <nav>
-    <button onclick="showService('otoplenie')">Монтаж отопления</button>
-    <button onclick="showService('vodootvedenie')">Водоотведение</button>
-    <button onclick="showService('gazosnab')">Газоснабжение</button>
-    <button onclick="showService('kondicioner')">Кондиционирование</button>
-    <button onclick="showService('elektro')">Электромонтаж</button>
-    <button onclick="showService('beton')">Бетонные работы</button>
+    <button onclick="scrollToId('otoplenie')">Монтаж отопления</button>
+    <button onclick="scrollToId('vodootvedenie')">Водоотведение</button>
+    <button onclick="scrollToId('gazosnab')">Газоснабжение</button>
+    <button onclick="scrollToId('kondicioner')">Кондиционирование</button>
+    <button onclick="scrollToId('elektro')">Электромонтаж</button>
+    <button onclick="scrollToId('beton')">Бетонные работы</button>
   </nav>
 
   <section id="services">
-    <div id="otoplenie" class="service" data-title="Монтаж отопления" data-desc="Полный комплекс услуг по установке систем отопления.">
+    <div id="otoplenie" class="service">
       <h2>Монтаж отопления</h2>
-      <img src="images/stroimontazh.jpg" alt="Отопление" />
+      <img src="./images/stroimontazh.jpg" alt="Отопление" />
     </div>
-    <div id="vodootvedenie" class="service" data-title="Водоотведение" data-desc="Монтаж систем водоотведения и канализации с гарантией качества.">
+    <div id="vodootvedenie" class="service">
       <h2>Водоотведение</h2>
-      <img src="images/vodootvedenie.jpg" alt="Водоотведение" />
+      <img src="./images/vodootvedenie.jpg" alt="Водоотведение" />
     </div>
-    <div id="gazosnab" class="service" data-title="Газоснабжение" data-desc="Услуги по проектированию и монтажу газовых сетей.">
+    <div id="gazosnab" class="service">
       <h2>Газоснабжение</h2>
-      <img src="images/gazosnabzhenie.png" alt="Газоснабжение" />
+      <img src="./images/gazosnabzhenie.png" alt="Газоснабжение" />
     </div>
-    <div id="kondicioner" class="service" data-title="Кондиционирование" data-desc="Установка вентиляционных систем и кондиционеров.">
+    <div id="kondicioner" class="service">
       <h2>Кондиционирование</h2>
-      <img src="images/kondicionirovanie.jpg" alt="Кондиционирование" />
+      <img src="./images/kondicionirovanie.jpg" alt="Кондиционирование" />
     </div>
-    <div id="elektro" class="service" data-title="Электромонтаж" data-desc="Профессиональный электромонтаж в жилых и коммерческих объектах.">
+    <div id="elektro" class="service">
       <h2>Электромонтаж</h2>
-      <img src="images/elektromontazh.jpg" alt="Электромонтаж" />
+      <img src="./images/elektromontazh.jpg" alt="Электромонтаж" />
     </div>
-    <div id="beton" class="service" data-title="Бетонные работы" data-desc="Бетонные и железобетонные конструкции любой сложности.">
+    <div id="beton" class="service">
       <h2>Бетонные работы</h2>
-      <img src="images/beton.jpg" alt="Бетонные работы" />
+      <img src="./images/beton.jpg" alt="Бетонные работы" />
     </div>
   </section>
 
-  <!-- Модальное окно -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="modal-title"></h2>
-      <p id="modal-desc"></p>
-    </div>
-  </div>
+  <section class="price-table">
+    <table>
+      <thead>
+        <tr><th>Услуга</th><th>Цена (от)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Монтаж отопления</td><td>2 500 руб/м²</td></tr>
+        <tr><td>Водоотведение</td><td>1 800 руб/м²</td></tr>
+        <tr><td>Газоснабжение</td><td>3 000 руб/м²</td></tr>
+        <tr><td>Кондиционирование</td><td>2 200 руб/м²</td></tr>
+        <tr><td>Электромонтаж</td><td>1 500 руб/точка</td></tr>
+        <tr><td>Бетонные работы</td><td>4 000 руб/м³</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="seo-block">
+    <h2>О нашей компании</h2>
+    <p>
+      «Московские Инженерные Сети» — это строительная компания с многолетним опытом в проектировании и монтаже инженерных систем в Москве и Подмосковье. Мы предлагаем полный цикл работ: от проектирования до сдачи объекта под ключ.
+      Наши специалисты работают с отоплением, водоотведением, вентиляцией, электрикой и бетонными конструкциями любой сложности.
+    </p>
+    <p>
+      Мы гарантируем высокое качество, соблюдение сроков и прозрачность на всех этапах сотрудничества. Наши клиенты получают надёжный результат, соответствующий современным строительным стандартам.
+    </p>
+  </section>
 
   <footer>
     <h2>Контакты</h2>
@@ -67,27 +197,9 @@
   </footer>
 
   <script>
-    function showService(id) {
-      document.querySelectorAll('.service').forEach(s => s.classList.remove('visible'));
-      const s = document.getElementById(id);
-      s.classList.add('visible');
-      openModal(s.dataset.title, s.dataset.desc);
+    function scrollToId(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
     }
-
-    function openModal(title, desc) {
-      document.getElementById('modal-title').textContent = title;
-      document.getElementById('modal-desc').textContent = desc;
-      document.getElementById('modal').classList.add('show');
-    }
-
-    function closeModal() {
-      document.getElementById('modal').classList.remove('show');
-    }
-
-    // Казузал: показать первый сервис сразу
-    showService('otoplenie');
   </script>
-
 </body>
 </html>
-
