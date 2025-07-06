@@ -1,0 +1,80 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #005bbb;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+h1 {
+  margin: 10px 0 0;
+}
+
+.section {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.works img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.services-list {
+  text-align: left;
+  display: inline-block;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+table {
+  margin: auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+table, th, td {
+  border: 1px solid #0072ce;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #0072ce;
+  color: white;
+}
+
+footer {
+  background-color: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.contacts {
+  background-color: #eaf3ff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.contacts h2 {
+  margin-bottom: 10px;
+}
