@@ -1,61 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Московские Инженерные Сети</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Московские Инженерные Сети</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="header">
-        <img src="images/logo.png" alt="Логотип компании" class="logo">
-        <nav class="navbar">
-            <a href="#about">О нас</a>
-            <a href="#services">Услуги</a>
-            <a href="#gallery">Галерея</a>
-            <a href="#contacts">Контакты</a>
-        </nav>
-    </header>
 
-    <section id="about" class="section">
-        <h1>Строительная компания «Московские Инженерные Сети»</h1>
-        <p>Мы занимаемся инженерными коммуникациями в Москве: водоснабжение, электрика, отопление, вентиляция, бетонные и монтажные работы.</p>
-    </section>
+  <header>
+    <img src="images/logo.png" alt="Логотип" class="logo" />
+    <h1>Строительная компания «Московские Инженерные Сети»</h1>
+  </header>
 
-    <section id="services" class="section">
-        <h2>Наши услуги</h2>
-        <ul>
-            <li>Электромонтажные работы</li>
-            <li>Системы водоснабжения</li>
-            <li>Монтаж отопления</li>
-            <li>Вентиляция и кондиционирование</li>
-            <li>Бетонные работы</li>
-            <li>Общий строймонтаж</li>
-        </ul>
-    </section>
+  <nav>
+    <button onclick="showService('otoplenie')">Монтаж отопления</button>
+    <button onclick="showService('vodootvedenie')">Водоотведение</button>
+    <button onclick="showService('gazosnab')">Газоснабжение</button>
+    <button onclick="showService('kondicioner')">Кондиционирование</button>
+    <button onclick="showService('elektro')">Электромонтаж</button>
+    <button onclick="showService('beton')">Бетонные работы</button>
+  </nav>
 
-    <section id="gallery" class="section gallery">
-        <h2>Примеры наших работ</h2>
-        <div class="gallery-grid">
-            <img src="images/elektromontazh.jpg" alt="Электромонтаж">
-            <img src="images/gazosnabzhenie.png" alt="Газоснабжение">
-            <img src="images/stroimontazh.jpg" alt="Строймонтаж">
-            <img src="images/vodootvedenie.jpg" alt="Водоотведение">
-            <img src="images/kondicionirovanie.jpg" alt="Кондиционирование">
-            <img src="images/beton.jpg" alt="Бетонные работы">
-        </div>
-    </section>
+  <section id="services">
+    <div id="otoplenie" class="service" data-title="Монтаж отопления" data-desc="Полный комплекс услуг по установке систем отопления.">
+      <h2>Монтаж отопления</h2>
+      <img src="images/stroimontazh.jpg" alt="Отопление" />
+    </div>
+    <div id="vodootvedenie" class="service" data-title="Водоотведение" data-desc="Монтаж систем водоотведения и канализации с гарантией качества.">
+      <h2>Водоотведение</h2>
+      <img src="images/vodootvedenie.jpg" alt="Водоотведение" />
+    </div>
+    <div id="gazosnab" class="service" data-title="Газоснабжение" data-desc="Услуги по проектированию и монтажу газовых сетей.">
+      <h2>Газоснабжение</h2>
+      <img src="images/gazosnabzhenie.png" alt="Газоснабжение" />
+    </div>
+    <div id="kondicioner" class="service" data-title="Кондиционирование" data-desc="Установка вентиляционных систем и кондиционеров.">
+      <h2>Кондиционирование</h2>
+      <img src="images/kondicionirovanie.jpg" alt="Кондиционирование" />
+    </div>
+    <div id="elektro" class="service" data-title="Электромонтаж" data-desc="Профессиональный электромонтаж в жилых и коммерческих объектах.">
+      <h2>Электромонтаж</h2>
+      <img src="images/elektromontazh.jpg" alt="Электромонтаж" />
+    </div>
+    <div id="beton" class="service" data-title="Бетонные работы" data-desc="Бетонные и железобетонные конструкции любой сложности.">
+      <h2>Бетонные работы</h2>
+      <img src="images/beton.jpg" alt="Бетонные работы" />
+    </div>
+  </section>
 
-    <section id="contacts" class="section contacts">
-        <h2>Контакты</h2>
-        <p>Телефон: +7 (495) 123-45-67</p>
-        <p>Email: info@msk-inzhseti.ru</p>
-        <p>Адрес: г. Москва, ул. Строительная, д. 12</p>
-    </section>
+  <!-- Модальное окно -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
 
-    <footer class="footer">
-        <p>&copy; 2025 Московские Инженерные Сети</p>
-    </footer>
+  <footer>
+    <h2>Контакты</h2>
+    <p><strong>Генеральный директор:</strong> Гаспарян Гарри Владимирович</p>
+    <p><strong>Телефон:</strong> <a href="tel:+74959876543">+7 (495) 987‑65‑43</a></p>
+    <p><strong>Email:</strong> <a href="mailto:kontakt@msk-inzhseti.ru">kontakt@msk-inzhseti.ru</a></p>
+    <p><strong>Адрес:</strong> Московская область, г. Шатура, пр‑т Ильича, д. 66/2, пом. 24</p>
+  </footer>
+
+  <script>
+    function showService(id) {
+      document.querySelectorAll('.service').forEach(s => s.classList.remove('visible'));
+      const s = document.getElementById(id);
+      s.classList.add('visible');
+      openModal(s.dataset.title, s.dataset.desc);
+    }
+
+    function openModal(title, desc) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-desc').textContent = desc;
+      document.getElementById('modal').classList.add('show');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.remove('show');
+    }
+
+    // Казузал: показать первый сервис сразу
+    showService('otoplenie');
+  </script>
+
 </body>
 </html>
+
