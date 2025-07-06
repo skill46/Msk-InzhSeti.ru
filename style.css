@@ -6,6 +6,21 @@ body {
   background: #000;
 }
 
+/* Контакты сверху */
+.contacts {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  font-size: 14px;
+  text-align: right;
+}
+
+.contacts a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
 /* Видео фон */
 .video-background {
   position: absolute;
@@ -85,6 +100,12 @@ body {
   transform: translateY(-10px);
 }
 
+.service p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
 /* Прайс */
 .price-table {
   max-width: 800px;
@@ -120,3 +141,16 @@ body {
 .animated-text {
   animation: fadeIn 1.5s ease-out;
 }
+
+/* О компании */
+.seo-block {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
