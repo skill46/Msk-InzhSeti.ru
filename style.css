@@ -1,61 +1,28 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; }
-header {
-  background: #005bbb; color: #fff; padding: 20px;
-  text-align: center; animation: fadeInDown 1s ease;
-}
-.logo { max-width: 120px; display: block; margin: 0 auto 10px; }
-nav { text-align: center; margin: 20px; animation: fadeIn 2s ease; }
-nav button {
-  margin: 5px; padding: 10px 15px; font-size: 16px;
-  border: none; border-radius: 5px; background: #0072ce;
-  color: #fff; cursor: pointer; transition: background .3s;
-}
-nav button:hover { background: #005aaa; }
-
-#services { display: flex; flex-wrap: wrap; justify-content: center; }
-.service {
-  width: 300px; margin: 15px;
-  padding: 10px; background: #f3f3f3;
-  border-radius: 8px; box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-  opacity: 0; transform: scale(0.9);
-  transition: opacity .4s ease, transform .4s ease;
-  cursor: pointer;
-}
-.service.visible { opacity: 1; transform: scale(1); }
-.service img { width: 100%; border-radius: 5px; }
-
-@keyframes fadeIn { from{opacity:0;} to{opacity:1;} }
-@keyframes fadeInDown { 
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Для изображений внутри блока услуг */
+.service img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.modal {
-  position: fixed; top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.5); display:none; align-items:center; justify-content:center;
-}
-.modal.show { display:flex; animation: fadeIn 0.3s ease; }
-.modal-content {
-  background:#fff; padding:20px; max-width:90%; width:400px;
-  border-radius:8px; position:relative;
-  animation: fadeInDown 0.3s ease;
-}
-.modal-content .close {
-  position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;
+/* Эффект при наведении на изображение */
+.service img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
-footer {
-  background:#222; color:#ddd; text-align:center;
-  padding:20px; margin-top:30px; font-size:14px;
-  animation: fadeInUp 1s ease;
-}
-@keyframes fadeInUp {
-  from { opacity:0; transform: translateY(20px); }
-  to { opacity:1; transform: translateY(0); }
-}
+/* Адаптивное выравнивание */
+@media (min-width: 768px) {
+  #services {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-@media(max-width:600px) {
-  .service { width:90%; }
-  nav button { display:block; width:80%; margin:10px auto; }
+  .service {
+    flex: 1 1 300px;
+    margin: 15px;
+  }
 }
