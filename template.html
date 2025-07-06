@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>Московские инженерные сети</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  body { margin:0; font-family: 'Segoe UI', sans-serif; color:#333; }
+  header { background:#0066cc; padding:20px; animation: fadeDown 1s ease-out; }
+  nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;}
+  .hero { background: #e6f2ff; padding:80px 20px; text-align:center; animation: fadeUp 1s ease-out; }
+  .hero h1 { font-size:2.8rem; margin:0;}
+  .hero p { font-size:1.2rem; margin-top:10px;}
+  section { padding:60px 20px; max-width:1000px; margin:auto;}
+  .services { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+  .service { background:#f5f5f5; padding:20px; border-radius:8px; transition:transform .3s; }
+  .service:hover { transform: translateY(-5px); }
+  footer { background:#333; color:#aaa; text-align:center; padding:20px; font-size:0.9rem;}
+  @keyframes fadeDown { from { opacity:0; transform: translateY(-20px);} to{opacity:1;transform:none;} }
+  @keyframes fadeUp { from { opacity:0; transform: translateY(20px);} to{opacity:1;transform:none;} }
+</style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#services">Услуги</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Строительная компания «Московские инженерные сети»</h1>
+    <p>Прокладка и обслуживание инженерных сетей: вода, газ, канализация и электрика</p>
+  </div>
+
+  <section id="about">
+    <h2>О компании</h2>
+    <p>ООО «Строительная Компания Московские Инженерные Сети» (Шатура) основано в 2024 году. Руководитель — Гаспарян Гарри Владимирович. Специализируемся на прокладке, монтаже и обслуживании инженерных сетей любого масштаба.</p>
+  </section>
+
+  <section id="services">
+    <h2>Наши услуги</h2>
+    <div class="services">
+      <div class="service"><h3>Водоснабжение и водоотведение</h3><p>Монтаж трубопроводов и систем канализации для жилых и коммерческих объектов.</p></div>
+      <div class="service"><h3>Газоснабжение</h3><p>Проектирование и прокладка газовых сетей, подключение к магистралям.</p></div>
+      <div class="service"><h3>Электромонтаж</h3><p>Прокладка кабелей, установка ЛЭП, модернизация электрических коммуникаций.</p></div>
+      <div class="service"><h3>Отопление и кондиционирование</h3><p>Монтаж систем отопления, вентиляции и кондиционирования.</p></div>
+      <div class="service"><h3>Благоустройство</h3><p>Ландшафтные работы, прокладка наружных инженерных сетей, водосток.</p></div>
+    </div>
+  </section>
+
+  <section id="contacts">
+    <h2>Контакты</h2>
+    <p><strong>Адрес:</strong> Московская обл., г. Шатура, пр‑кт Ильича, д. 66/2, пом. 24</p>
+    <p><strong>Телефон:</strong> +7 (922) 466‑55‑83</p>
+    <p><strong>E‑mail:</strong> oooskmisvladimir@gmail.com</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Московские инженерные сети
+  </footer>
+</body>
+</html>
