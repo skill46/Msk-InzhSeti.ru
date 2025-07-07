@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Инженерные сети под ключ в Москве: отопление, водоснабжение, электрика, бетонные работы. Быстро, качественно, с гарантией.">
+  <title>Московские Инженерные Сети</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Видео-фон -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="background-video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- Заголовок -->
+  <header class="hero">
+    <h1>Московские Строительные Инженерные Сети</h1>
+    <p>Профессиональный монтаж инженерных систем в Москве и МО</p>
+    <button onclick="scrollToId('services')">Наши услуги</button>
+  </header>
+
+  <!-- Услуги -->
+  <section id="services">
+    <h2>Услуги</h2>
+    <div class="services">
+      <div class="service"><h3>Электромонтаж</h3></div>
+      <div class="service"><h3>Водоотведение</h3></div>
+      <div class="service"><h3>Газоснабжение</h3></div>
+      <div class="service"><h3>Отопление</h3></div>
+      <div class="service"><h3>Кондиционирование</h3></div>
+      <div class="service"><h3>Бетонные работы</h3></div>
+    </div>
+  </section>
+
+  <!-- Контакты -->
+  <footer>
+    <h2>Контакты</h2>
+    <p>📞 +7 (495) 987-65-43</p>
+    <p>✉ kontakt@msk-inzhseti.ru</p>
+  </footer>
+
+  <script>
+    function scrollToId(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
