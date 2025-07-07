@@ -1,62 +1,100 @@
+/* Общие стили */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #000;
-  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: #f0f0f0;
   scroll-behavior: smooth;
 }
+
+/* Видео фон */
 .video-background video {
   position: fixed;
   top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
 }
+
+/* Верхние контакты */
+.contacts {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  text-align: right;
+  font-size: 14px;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+}
+
+/* Бегущая строка */
+.ticker {
+  background: #111;
+  color: #0ff;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 25s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Хедер */
 .hero {
   text-align: center;
   padding: 150px 20px 100px;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
+}
+.logo {
+  max-width: 120px;
+  margin-bottom: 20px;
 }
 .hero h1 {
   font-size: 36px;
   margin-bottom: 10px;
 }
 .hero p {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 20px;
 }
-button {
-  padding: 10px 20px;
-  background: #007bff;
-  border: none;
-  color: #fff;
+
+/* Кнопки */
+.cta-button {
+  margin: 10px;
+  padding: 12px 24px;
   font-size: 16px;
+  border-radius: 6px;
+  border: none;
   cursor: pointer;
+  transition: 0.3s ease;
 }
-section {
-  padding: 60px 20px;
+.cta-button.pulse {
+  background: #007bff;
+  color: white;
+  animation: pulse 2s infinite;
 }
-h2 {
-  text-align: center;
-  font-size: 28px;
-  margin-bottom: 20px;
+.cta-button.transparent {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid #ccc;
 }
-.services {
+.cta-button:hover {
+  transform: scale(1.05);
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Услуги */
+.services-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.service {
-  background: #111;
-  padding: 20px;
-  border-radius: 8px;
-  width: 250px;
-  text-align: center;
-  box-shadow: 0 0 10px #222;
-}
-footer {
-  background: #111;
-  text-align: center;
-  padding: 40px 20px;
-}
+  justify-co
