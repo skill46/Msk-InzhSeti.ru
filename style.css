@@ -1,155 +1,156 @@
-/* ========== Общие стили ========== */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #fff; }
-a { color: inherit; text-decoration: none; }
-h1, h2, h3 { font-weight: 600; margin-bottom: 10px; }
-
-/* ========== Контакты (сверху) ========== */
-.contacts {
-  position: absolute;
-  top: 10px; right: 20px;
-  background: rgba(255,255,255,0.8);
-  padding: 8px 12px;
-  border-radius: 6px;
-  font-size: 14px;
-  z-index: 20;
+/* Основной стиль для сайта */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #000;
 }
 
-/* ========== Видео и Header ========== */
+/* Контакты сверху */
+.contacts {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #fff;
+  font-size: 14px;
+  text-align: right;
+}
+
+.contacts a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+/* Видео фон */
 .video-background {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   z-index: -1;
 }
+
 .video-background video {
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  opacity: 0.7;
 }
 
+/* Главный блок с анимацией */
 .hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
   text-align: center;
-  color: #fff;
+  padding: 100px 20px;
+  z-index: 1;
 }
-.hero-content {
-  background: rgba(0,0,0,0.5);
-  padding: 40px 20px;
-  border-radius: 8px;
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 20px 0;
+  animation: fadeIn 2s ease-out;
 }
+
+.hero-content p {
+  font-size: 1.5rem;
+  animation: fadeIn 2s ease-out;
+}
+
 .cta-button {
-  margin-top: 20px;
-  background: #ffcc00;
+  background-color: #ffcc00;
   border: none;
-  padding: 14px 28px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 5px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #000;
   cursor: pointer;
-  transition: background 0.3s;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
+
 .cta-button:hover {
-  background: #e6b800;
+  background-color: #ff9800;
 }
 
-/* ========== Анимация текста ========== */
-.animated-text {
-  opacity: 0;
-  animation: fadeInUp 1s forwards;
-}
-.animated-text:nth-child(1) { animation-delay: 0.2s; }
-.animated-text:nth-child(2) { animation-delay: 0.6s; }
-.cta-button { animation-delay: 1s; }
-@keyframes fadeInUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+/* Сервисы */
+#services {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 20px;
 }
 
-/* ========== Превью ========== */
-.about-preview {
-  padding: 40px 20px;
-  text-align: center;
-  background: #f7f7f7;
-}
-.about-preview h2 { margin-bottom: 12px; font-size: 24px; }
-
-/* ========== Сервисы ========== */
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
-  gap: 20px;
-  padding: 40px 20px;
-}
 .service {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.8);
   padding: 20px;
+  border-radius: 10px;
+  width: 30%;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
-.service h3 { margin-bottom: 10px; font-size: 20px; }
+
 .service img {
-  width: 100%;
-  border-radius: 6px;
-  height: 160px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-.service p { font-size: 16px; color: #555; }
-
-/* ========== Расширенная информация ========== */
-.seo-block {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-  background: #fafafa;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
-/* ========== Прайс-лист ========== */
+.service:hover {
+  transform: translateY(-10px);
+}
+
+.service p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Прайс */
 .price-table {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.price-table h2 { margin-bottom: 20px; text-align: center; }
+
 .price-table table {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
 .price-table th, .price-table td {
-  padding: 14px 12px;
-  border-bottom: 1px solid #eee;
+  padding: 15px;
+  border: 1px solid #ccc;
   text-align: left;
 }
+
 .price-table th {
   background: #0057b7;
-  color: #fff;
+  color: white;
 }
 
-/* ========== Футер ========== */
-footer {
-  background: #222;
-  color: #ddd;
-  padding: 40px 20px;
-  text-align: center;
-  margin-top: 40px;
+/* Анимация текста */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
-footer h2 { color: #fff; margin-bottom: 14px; }
 
-/* ========== Адаптив ========== */
-@media (max-width: 600px) {
-  .contacts { display: none; }
-  .hero { height: 60vh; }
+.animated-text {
+  animation: fadeIn 1.5s ease-out;
 }
+
+/* О компании */
+.seo-block {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 1.6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
