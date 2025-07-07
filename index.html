@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Профессиональные инженерные и строительные услуги в Москве и МО. Отопление, канализация, газоснабжение, электрика и бетонные работы под ключ." />
   <meta name="keywords" content="инженерные сети, отопление, водоотведение, газоснабжение, электромонтаж, бетонные работы, строительство, Москва, Шатура" />
-  <title>Московские Инженерные Сети | Строительство под ключ</title>
+  <title>Московские Инженерные Сети | Проектирование и монтаж систем</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,7 +19,7 @@
   <!-- Видео фон -->
   <div class="video-background">
     <video autoplay loop muted>
-      <source src="background-video.mp4.mp4" type="video/mp4">
+      <source src="background-video.mp4" type="video/mp4" />
     </video>
   </div>
 
@@ -31,6 +31,12 @@
       <button class="cta-button" onclick="scrollToId('services')">Наши услуги</button>
     </div>
   </header>
+
+  <!-- Предпросмотр "О компании" -->
+  <section id="about-preview" class="about-preview">
+    <h2>О компании</h2>
+    <p>Мы предоставляем комплексные услуги по проектированию, монтажу и обслуживанию инженерных систем. Работаем по всей Москве и области, обеспечивая качество и соблюдение сроков.</p>
+  </section>
 
   <!-- Сервисы -->
   <section id="services">
@@ -75,6 +81,7 @@
 
   <!-- Прайс -->
   <section class="price-table">
+    <h2>Прайс-лист</h2>
     <table>
       <thead>
         <tr><th>Услуга</th><th>Цена (от)</th></tr>
@@ -95,8 +102,10 @@
     <h2>Контакты</h2>
     <p><strong>Телефон:</strong> <a href="tel:+74959876543">+7 (495) 987‑65‑43</a></p>
     <p><strong>Email:</strong> <a href="mailto:kontakt@msk-inzhseti.ru">kontakt@msk-inzhseti.ru</a></p>
+    <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 1</p>
   </footer>
 
+  <!-- Скрипт прокрутки -->
   <script>
     function scrollToId(id) {
       document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
